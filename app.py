@@ -1,6 +1,6 @@
-import streamlit as st
+import streamlit as st # type: ignore
 
-from dotenv import load_dotenv
+from dotenv import load_dotenv # type: ignore
 
 load_dotenv()
 
@@ -23,8 +23,8 @@ selected_item = st.radio(
 if st.button("実行"):
     if selected_item == "服装コーディネーター":
         
-        from langchain_openai import ChatOpenAI
-        from langchain.schema import SystemMessage, HumanMessage
+        from langchain_openai import ChatOpenAI # type: ignore
+        from langchain.schema import SystemMessage, HumanMessage # type: ignore
         llm =ChatOpenAI(model_name = "gpt-4o-mini",temperature=0.5)
         message =[
             SystemMessage(content="あなたは優秀な服装コーディネーターです"),
@@ -32,8 +32,8 @@ if st.button("実行"):
         ]
         result = llm(message)
     else:
-        from langchain_openai import ChatOpenAI
-        from langchain.schema import SystemMessage, HumanMessage
+        from langchain_openai import ChatOpenAI # type: ignore
+        from langchain.schema import SystemMessage, HumanMessage # type: ignore
         llm =ChatOpenAI(model_name = "gpt-4o-mini",temperature=0.5)
         message =[
             SystemMessage(content="あなたは優秀な旅行コーディネーターです"),
